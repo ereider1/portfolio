@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import myPic2 from './assets/my-pic-02.png';
 
 // Import project screenshots
+import doodetectorImg from './assets/doodetector.png';
 import laconchitaImg from './assets/laconchitabeach.jpg';
 import balisafariImg from './assets/balisafaritour.jpg';
 import robreiderImg from './assets/robreidervoice.jpg';
@@ -151,29 +152,39 @@ export default function App() {
   ];
 
   const workList = [
+
     {
       id: 1,
       title: 'laconchitabeach.com',
       url: 'https://laconchitabeach.com',
-      meta: '2025 / WEB PORTAL',
+      meta: '2026 / WEB PORTAL',
       desc: 'Resident portal for a coastal community — featuring custom secure login, directory, shared documentation storage, and live automated tide/surf conditions.',
       stack: ['Next.js', 'Tailwind', 'MongoDB', 'Clerk'],
       image: laconchitaImg
     },
     {
       id: 2,
+      title: 'DooDetector',
+      url: 'https://doodetector.com.com',
+      meta: '2026 / APP',
+      desc: 'I created an app for my pool guy. I have 3 large dogs- and his eyesight is not 100%.',
+      stack: ['Next.js', 'Tailwind'],
+      image: doodetectorImg
+    },
+    {
+      id: 3,
       title: 'balisafaritour.com',
       url: 'https://balisafaritour.com',
-      meta: '2024 / CONVERSION ENGINE',
+      meta: '2026 / CONVERSION ENGINE',
       desc: 'Premium marketing and booking site for a Bali-based tour operator — featuring seamless WhatsApp-based inquiry funnels and optimized for mobile conversion.',
       stack: ['Next.js', 'Tailwind', 'Responsive Web'],
       image: balisafariImg
     },
     {
-      id: 3,
+      id: 4,
       title: 'robreidervoice.com',
       url: 'https://robreidervoice.com',
-      meta: '2024 / DEMO REEL',
+      meta: '2026 / DEMO REEL',
       desc: 'Portfolio and demo reel site for an Emmy-winning voice actor — custom audio-forward design and media streaming controls built to convert and book auditions.',
       stack: ['React', 'Vite', 'HTML5 Audio'],
       image: robreiderImg
