@@ -308,7 +308,7 @@ export default function App() {
         <div className="section-container">
           <header className="section-header">
             <h2 id="work-heading">RECENT WORK</h2>
-            <span className="section-number">/03</span>
+            <span className="section-number">/01</span>
           </header>
 
           <div className="work-grid">
@@ -369,7 +369,7 @@ export default function App() {
         <div className="section-container">
           <header className="section-header">
             <h2 id="process-heading">PROCESS</h2>
-            <span className="section-number">/01</span>
+            <span className="section-number">/02</span>
           </header>
           <div className="process-grid">
             {processList.map((p, idx) => (
@@ -387,7 +387,7 @@ export default function App() {
         <div className="section-container">
           <header className="section-header">
             <h2 id="tools-heading">TOOLS</h2>
-            <span className="section-number">/02</span>
+            <span className="section-number">/03</span>
           </header>
           <div className="tools-grid">
             {toolsListDetail.map((tool, idx) => (
