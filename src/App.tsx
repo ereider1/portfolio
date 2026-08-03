@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Import profile picture
 import myPic2 from './assets/my-pic-02.png';
@@ -19,6 +19,23 @@ import sbindyLogo from './assets/independent.webp';
 
 export default function App() {
   const [activeProject, setActiveProject] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleEmailClick = () => {
+    navigator.clipboard.writeText('reiderea@gmail.com').then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    });
+  };
 
   const toolsListDetail = [
     {
@@ -210,13 +227,12 @@ export default function App() {
   return (
     <>
       {/* Dynamic Mixed-blend Navigation Bar */}
-      <nav className="navbar" role="navigation" aria-label="Main Navigation">
-        <div className="nav-brand">er.</div>
+      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main Navigation">
+        <a href="#intro" className="nav-brand">er.</a>
         <ul className="nav-links">
-          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#work">Recent Work</a></li>
           <li><a href="#process">Process</a></li>
           <li><a href="#tools">Tools</a></li>
-          <li><a href="#work">Recent Work</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -231,7 +247,7 @@ export default function App() {
               creative designer & developer — i pair design instincts with AI-augmented engineering.
             </div>
             <div className="hero-meta-col" style={{ textAlign: 'right' }}>
-              <a href="mailto:reiderea@gmail.com">reiderea@gmail.com ↗</a>
+              <a href="mailto:reiderea@gmail.com" onClick={handleEmailClick}>reiderea@gmail.com ↗</a>
             </div>
           </header>
 
@@ -264,47 +280,6 @@ export default function App() {
               </div>
             </div>
           </main>
-        </div>
-      </section>
-
-      {/* Process Section (Light Theme) */}
-      <section id="process" className="theme-light" aria-labelledby="process-heading">
-        <div className="section-container">
-          <header className="section-header">
-            <h2 id="process-heading">PROCESS</h2>
-            <span className="section-number">/01</span>
-          </header>
-          <div className="process-grid">
-            {processList.map((p, idx) => (
-              <article key={idx} className="process-card">
-                <h3 className="process-step">{p.step}</h3>
-                <p className="process-desc">{p.desc}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tools Section (Light Theme) - Redesigned Grid Layout */}
-      <section id="tools" className="theme-light" aria-labelledby="tools-heading">
-        <div className="section-container">
-          <header className="section-header">
-            <h2 id="tools-heading">TOOLS</h2>
-            <span className="section-number">/02</span>
-          </header>
-          <div className="tools-grid">
-            {toolsListDetail.map((tool, idx) => (
-              <article key={idx} className="tool-card">
-                <div className="tool-icon-box" aria-hidden="true">
-                  {tool.icon}
-                </div>
-                <div className="tool-text-col">
-                  <h3 className="tool-title">{tool.name}</h3>
-                  <p className="tool-desc">{tool.desc}</p>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -369,6 +344,49 @@ export default function App() {
         </div>
       </section>
 
+      {/* Process Section (Light Theme) */}
+      <section id="process" className="theme-light" aria-labelledby="process-heading">
+        <div className="section-container">
+          <header className="section-header">
+            <h2 id="process-heading">PROCESS</h2>
+            <span className="section-number">/01</span>
+          </header>
+          <div className="process-grid">
+            {processList.map((p, idx) => (
+              <article key={idx} className="process-card">
+                <h3 className="process-step">{p.step}</h3>
+                <p className="process-desc">{p.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tools Section (Light Theme) - Redesigned Grid Layout */}
+      <section id="tools" className="theme-light" aria-labelledby="tools-heading">
+        <div className="section-container">
+          <header className="section-header">
+            <h2 id="tools-heading">TOOLS</h2>
+            <span className="section-number">/02</span>
+          </header>
+          <div className="tools-grid">
+            {toolsListDetail.map((tool, idx) => (
+              <article key={idx} className="tool-card">
+                <div className="tool-icon-box" aria-hidden="true">
+                  {tool.icon}
+                </div>
+                <div className="tool-text-col">
+                  <h3 className="tool-title">{tool.name}</h3>
+                  <p className="tool-desc">{tool.desc}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
       {/* Experience Section (Light Theme) */}
       <section id="experience" className="theme-light" aria-labelledby="experience-heading">
         <div className="section-container">
@@ -414,13 +432,13 @@ export default function App() {
             <div className="footer-right">
               <div className="email-block">
                 <span className="email-label">Email me</span>
-                <a href="mailto:reiderea@gmail.com" className="email-link-wrapper">
+                <a href="mailto:reiderea@gmail.com" className="email-link-wrapper" onClick={handleEmailClick}>
                   <span className="email-link">reiderea@gmail.com</span>
                   <span className="email-arrow" aria-hidden="true">↗</span>
                 </a>
               </div>
               <ul className="social-links" aria-label="Social Profiles">
-                <li><a href="mailto:reiderea@gmail.com">email</a></li>
+                <li><a href="mailto:reiderea@gmail.com" onClick={handleEmailClick}>email</a></li>
                 <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">linkedin</a></li>
                 <li><a href="/elizabeth-reider-resume.pdf" target="_blank" rel="noopener noreferrer">resume (pdf)</a></li>
               </ul>
@@ -431,7 +449,6 @@ export default function App() {
             <div className="footer-meta-nav">
               <span>©2026 ELIZABETH REIDER</span>
               <ul className="footer-nav-list" aria-label="Footer Navigation">
-                <li><a href="#intro">Introduction</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#tools">Tools</a></li>
                 <li><a href="#work">Recent Work</a></li>
@@ -443,6 +460,12 @@ export default function App() {
           </div>
         </footer>
       </section>
+
+      {copied && (
+        <div className="toast-notification" role="status">
+          <span>reiderea@gmail.com copied to clipboard!</span>
+        </div>
+      )}
     </>
   );
 }

@@ -94,6 +94,17 @@ a {
   mix-blend-mode: difference; /* Beautiful high-end visual mix over light/dark backgrounds! */
   color: #ffffff; /* Contrast on mixed backgrounds */
   pointer-events: none; /* Let links be clickable but nav container transparent */
+  transition: var(--transition-smooth);
+}
+
+.navbar.scrolled {
+  mix-blend-mode: normal;
+  background-color: rgba(14, 14, 14, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  padding: 14px 4%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
 }
 
 .nav-brand {
@@ -728,8 +739,8 @@ a {
   grid-template-columns: 1.2fr 1fr;
   gap: 60px;
   align-items: flex-start;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 80px;
+  /*border-bottom: 1px solid var(--border-color);
+  padding-bottom: 80px;*/
 }
 
 @media (max-width: 1024px) {
@@ -884,5 +895,36 @@ a {
   .footer-giant-brand {
     letter-spacing: -3px;
     padding-top: 20px;
+  }
+}
+
+/* ==========================================
+   TOAST NOTIFICATION (COPY EMAIL)
+   ========================================== */
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ffffff;
+  color: #0e0e0e;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+  animation: slideInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none; /* Non-blocking click events */
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
