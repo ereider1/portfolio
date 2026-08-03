@@ -136,6 +136,95 @@ a {
   opacity: 1;
 }
 
+/* Mobile Toggle Button (Default hidden on desktop) */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110;
+  pointer-events: auto;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: var(--transition-fast);
+}
+
+/* Transforming Hamburger Lines into an 'X' */
+.mobile-menu-toggle.open .hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.open .hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Navigation Overlay */
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(14, 14, 14, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%); /* Subtle slide-down animation */
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-overlay.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-links a {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 200;
+  color: #ffffff;
+  letter-spacing: -1px;
+  opacity: 0.85;
+  transition: var(--transition-smooth);
+}
+
+.mobile-nav-links a:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
   .navbar {
     mix-blend-mode: normal;
@@ -146,6 +235,9 @@ a {
   }
   .nav-links {
     display: none; /* Hide standard nav on small viewports, or make it dynamic if needed */
+  }
+  .mobile-menu-toggle {
+    display: flex; /* Show toggle on mobile viewports */
   }
 }
 

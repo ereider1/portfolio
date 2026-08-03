@@ -21,6 +21,7 @@ export default function App() {
   const [activeProject, setActiveProject] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -227,8 +228,8 @@ export default function App() {
   return (
     <>
       {/* Dynamic Mixed-blend Navigation Bar */}
-      <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main Navigation">
-        <a href="#intro" className="nav-brand">er.</a>
+      <nav className={`navbar ${isScrolled || isMobileMenuOpen ? 'scrolled' : ''}`} role="navigation" aria-label="Main Navigation">
+        <a href="#intro" className="nav-brand" onClick={() => setIsMobileMenuOpen(false)}>er.</a>
         <ul className="nav-links">
           <li><a href="#work">Recent Work</a></li>
           <li><a href="#process">Process</a></li>
@@ -236,7 +237,29 @@ export default function App() {
           <li><a href="#experience">Experience</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        {/* Mobile Hamburger Toggle */}
+        <button 
+          className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`} 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMobileMenuOpen}
+        >
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+          <span className="hamburger-line"></span>
+        </button>
       </nav>
+
+      {/* Mobile Navigation Overlay */}
+      <div className={`mobile-nav-overlay ${isMobileMenuOpen ? 'open' : ''}`} aria-hidden={!isMobileMenuOpen}>
+        <ul className="mobile-nav-links">
+          <li><a href="#work" onClick={() => setIsMobileMenuOpen(false)}>Recent Work</a></li>
+          <li><a href="#process" onClick={() => setIsMobileMenuOpen(false)}>Process</a></li>
+          <li><a href="#tools" onClick={() => setIsMobileMenuOpen(false)}>Tools</a></li>
+          <li><a href="#experience" onClick={() => setIsMobileMenuOpen(false)}>Experience</a></li>
+          <li><a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</a></li>
+        </ul>
+      </div>
 
       {/* Intro Section (Dark Theme) */}
       <section id="intro" className="theme-dark" aria-labelledby="intro-heading">
