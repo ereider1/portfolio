@@ -267,7 +267,7 @@ export default function App() {
           <header className="hero-top-row">
             <h1 id="intro-heading" className="hero-giant-name">elizabeth reider</h1>
             <div className="hero-meta-col">
-              creative designer & developer — i pair design instincts with AI-augmented engineering.
+              creative designer & developer
             </div>
             <div className="hero-meta-col" style={{ textAlign: 'right' }}>
               <a href="mailto:reiderea@gmail.com" onClick={handleEmailClick}>reiderea@gmail.com ↗</a>
@@ -283,16 +283,13 @@ export default function App() {
               />
             </div>
             <div className="hero-right-text">
-              <h2 className="hero-tagline">I turn thoughts into things.</h2>
+              <h2 className="hero-tagline">I combine design intuition with AI-powered engineering.</h2>
               <div className="hero-bio">
                 <p>
                   Turning ideas into reality takes the right tools. I know how to use a lot of them.
                 </p>
                 <p>
                   I started with a bachelor of fine arts from Miami University. I learned fast-paced print design and production at the Santa Barbara Independent, animation at Venables Bell & Partners in San Francisco, web design at Yardi Systems, web development at CrowdStrike.
-                </p>
-                <p>
-                  There were plenty of side projects along the way — I learned to build 'break' and re-build things.
                 </p>
                 <p>
                   Now i use ai to automate tasks, explore, create, and build. 
