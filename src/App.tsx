@@ -167,7 +167,7 @@ export default function App() {
       title: 'DooDetector',
       url: 'https://doodetector.com.com',
       meta: '2026 / APP',
-      desc: 'I created an app for my pool guy. I have 3 large dogs- and his eyesight is not 100%.',
+      desc: 'I have 3 large dogs and a pool guy with poor eyesight.',
       stack: ['Next.js', 'Tailwind'],
       image: doodetectorImg
     },
