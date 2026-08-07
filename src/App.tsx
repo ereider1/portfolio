@@ -165,7 +165,7 @@ export default function App() {
     {
       id: 2,
       title: 'DooDetector',
-      url: 'https://doodetector.com.com',
+      url: 'https://doodetector.com',
       meta: '2026 / APP',
       desc: 'I have 3 large dogs and a pool guy with poor eyesight.',
       stack: ['Next.js', 'Tailwind'],
