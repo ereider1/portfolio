@@ -18,6 +18,11 @@ import venablesLogo from './assets/venables-bell-logo.png';
 import labjLogo from './assets/losangelesbusinessjournal-logo.jpg';
 import sbindyLogo from './assets/independent.webp';
 
+// Import tool logos
+import coderabbitLogo from './assets/coderabbit-logo.svg';
+import nodejsLogo from './assets/nodejs-logo.jpg';
+import typescriptLogo from './assets/typescript-log0o.webp';
+
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -64,9 +69,7 @@ export default function App() {
       name: 'TypeScript',
       desc: 'Enforcing strict static typing, interfaces, and clean code contracts across modern client-side and backend database environments.',
       icon: (
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M1.5 1.5h21v21h-21v-21zm19.5 16.512c-.15-.945-.75-1.74-2.58-2.475-.63-.3-1.335-.51-1.53-.99-.075-.285-.09-.435-.03-.6.12-.555.84-.72 1.365-.675.51.03.915.195 1.29.51l.51-.975c-.6-.51-.9-.69-2.13-.69-1.11 0-1.95.3-2.38 1.035-.285.48-.335 1.11-.075 1.62.525 1.02 1.875 1.35 2.58 1.695.705.33.975.57 1.14.96.165.39.15 1.02-.165 1.38-.33.375-1.02.63-1.725.585-.765-.03-1.275-.33-1.755-.78l-.705.975c.57.525 1.395.9 2.46.9 1.74 0 2.76-.915 2.91-2.46zm-6.21-7.512h-4.44v9.78h-1.26v-9.78H4.11v-1.08h10.08v1.08z" />
-        </svg>
+        <img src={typescriptLogo} alt="TypeScript" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
       )
     },
     {
@@ -95,9 +98,7 @@ export default function App() {
       name: 'Node.js',
       desc: 'Architecting fast execution scripts, command-line interfaces, server systems, and integration connectors.',
       icon: (
-        <svg viewBox="0 0 256 284" width="24" height="24" fill="currentColor">
-          <path d="M255.5 69.5L128 0 0.5 69.5v145L128 284l127.5-69.5v-145z" />
-        </svg>
+        <img src={nodejsLogo} alt="Node.js" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
       )
     },
     {
@@ -122,11 +123,7 @@ export default function App() {
       name: 'Code Rabbit',
       desc: 'Optimizing codebase maintenance using continuous, automated AI code reviews to enforce strict technical standards.',
       icon: (
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M9 3H7a3 3 0 0 0-3 3v4a5 5 0 0 0 10 0V6a3 3 0 0 0-3-3h-2M15 3h2a3 3 0 0 1 3 3v4a5 5 0 0 1-10 0V6a3 3 0 0 1 3-3h2" />
-          <path d="M12 12a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" fill="currentColor" />
-          <path d="M8 15a4 4 0 0 0 8 0" />
-        </svg>
+        <img src={coderabbitLogo} alt="Code Rabbit" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
       )
     }
   ];
@@ -166,7 +163,8 @@ export default function App() {
       title: 'DooDetector',
       url: 'https://doodetector.com',
       meta: '2026 / APP',
-      desc: 'I have 3 large dogs and 1 pool guy with poor eyesight. At my house he has network access to my outdoor cameras, which auto-fill the start image with a default "clean view" and then a "current view... many shoes saved.',
+      desc: 'I have 3 large dogs and 1 pool guy with poor eyesight. At my house he has network access to my outdoor cameras, which auto-fill the start image with a default "clean view" and then a "current view... many shoes saved.
+      ',
       stack: ['Next.js', 'Tailwind'],
       image: doodetectorImg
     },
