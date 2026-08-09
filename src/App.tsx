@@ -19,7 +19,6 @@ import labjLogo from './assets/losangelesbusinessjournal-logo.jpg';
 import sbindyLogo from './assets/independent.webp';
 
 export default function App() {
-  const [activeProject, setActiveProject] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [copied, setCopied] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -322,55 +321,68 @@ export default function App() {
             <span className="section-number">/01</span>
           </header>
 
-          <div className="work-grid">
-            {/* Left Dynamic Artwork and Screenshots Cross-fade Panel */}
-            <aside className="work-left-panel" aria-hidden="true">
-              <div className="work-interactive-canvas">
-                {/* Default screenshot shown when no project is hovered */}
-                <img
-                  src={laconchitaImg}
-                  alt="La Conchita Beach default preview"
-                  className={`work-screenshot-preview ${activeProject === null ? 'active' : ''}`}
-                />
-
-                {/* Screenshots that cross-fade on activeProject */}
-                {workList.map((work) => (
-                  <img
-                    key={work.id}
-                    src={work.image}
-                    alt={`${work.title} screenshot`}
-                    className={`work-screenshot-preview ${activeProject === work.id ? 'active' : ''}`}
-                  />
-                ))}
-              </div>
-            </aside>
-
-            {/* Right Interactive List */}
-            <div className="work-right-list">
-              {workList.map((work) => (
+          <div className="work-list">
+            {workList.map((work, idx) => {
+              const isEven = idx % 2 === 1;
+              return (
                 <article
                   key={work.id}
-                  className="work-item"
-                  onMouseEnter={() => setActiveProject(work.id)}
-                  onMouseLeave={() => setActiveProject(null)}
+                  className={`work-item-row ${isEven ? 'even' : 'odd'}`}
                 >
-                  <div className="work-item-meta">
-                    <span>{work.meta}</span>
-                    <a href={work.url} target="_blank" rel="noopener noreferrer">VISIT SITE ↗</a>
+                  {/* Image Column with Badge */}
+                  <div className="work-image-col">
+                    <div className="work-image-wrapper">
+                      <div className="work-image-badge">
+                        {String(idx + 1).padStart(2, '0')}
+                      </div>
+                      <img
+                        src={work.image}
+                        alt={`${work.title} preview`}
+                        className="work-item-image"
+                      />
+                    </div>
                   </div>
-                  <div className="work-item-title-row">
-                    <h3 className="work-item-title">{work.title}</h3>
-                    <span className="work-item-arrow" aria-hidden="true">↗</span>
-                  </div>
-                  <p className="work-item-desc">{work.desc}</p>
-                  <div className="work-item-stack">
-                    {work.stack.map((tech, idx) => (
-                      <span key={idx} className="work-tech-tag">{tech}</span>
-                    ))}
+
+                  {/* Details Column */}
+                  <div className="work-details-col">
+                    <div className="work-item-meta">
+                      <span className="work-meta-prefix">——</span>
+                      <span>{work.meta}</span>
+                    </div>
+
+                    <div className="work-item-title-row">
+                      <h3 className="work-item-title">
+                        <a href={work.url} target="_blank" rel="noopener noreferrer">
+                          {work.title}
+                        </a>
+                      </h3>
+                      <span className="work-item-arrow" aria-hidden="true">
+                        <a href={work.url} target="_blank" rel="noopener noreferrer">↗</a>
+                      </span>
+                    </div>
+
+                    <p className="work-item-desc">{work.desc}</p>
+
+                    {/* Tech Stack Custom Note Block */}
+                    <div className="work-local-note">
+                      <div className="work-local-note-label">TECH STACK</div>
+                      <div className="work-item-stack">
+                        {work.stack.map((tech, techIdx) => (
+                          <span key={techIdx} className="work-tech-tag">{tech}</span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Visit Site Action Row */}
+                    <div className="work-visit-row">
+                      <a href={work.url} target="_blank" rel="noopener noreferrer" className="work-visit-link">
+                        VISIT SITE ↗
+                      </a>
+                    </div>
                   </div>
                 </article>
-              ))}
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
