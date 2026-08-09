@@ -163,8 +163,7 @@ export default function App() {
       title: 'DooDetector',
       url: 'https://doodetector.com',
       meta: '2026 / APP',
-      desc: 'I have 3 large dogs and 1 pool guy with poor eyesight. At my house he has network access to my outdoor cameras, which auto-fill the start image with a default "clean view" and then a "current view... many shoes saved.
-      ',
+      desc: 'I have 3 large dogs and 1 pool guy with poor eyesight. At my house he has network access to my outdoor cameras, which auto-fill the start image with a default "clean view" and then a "current view... many shoes saved.',
       stack: ['Next.js', 'Tailwind'],
       image: doodetectorImg
     },
