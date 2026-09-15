@@ -339,7 +339,7 @@ a {
 
 .hero-tagline {
   font-family: var(--font-display);
-  font-size: calc(2vw + 2px);
+/*  font-size: calc(2vw + 2px);*/
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -1px;
@@ -1070,3 +1070,9 @@ a {
     opacity: 1;
   }
 }
+
+/* SEO / semantic content */
+.hero-eyebrow { font-family: var(--font-mono); font-size: 13px; font-weight: 700; line-height: 1.4; letter-spacing: 1px; color: var(--text-muted); margin: 0 0 18px; }
+.section-header > div { min-width: 0; flex: 1; }
+.section-header .section-intro { font-family: var(--font-sans); font-size: 16px; font-weight: 400; line-height: 1.6; letter-spacing: 0; color: var(--text-muted); max-width: 720px; margin: 16px 0 0; }
+
