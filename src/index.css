@@ -5,8 +5,8 @@
    ========================================== */
 :root {
   /* Font Family Definitions */
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Open Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'Space Mono', monospace;
 
   /* Universal Layout / Transitions */
@@ -370,7 +370,6 @@ a {
 
 .section-header {
   font-family: var(--font-display);
-  font-size: calc(3vw + 20px);
   font-weight: 700;
   letter-spacing: -2px;
   color: var(--text-bold);
