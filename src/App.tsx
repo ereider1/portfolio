@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import myPic2 from './assets/my-pic-02.png';
 
 // Import project screenshots
-import doodetectorImg from './assets/doodetector.png';
+import luleestudioImg from './assets/lulee-studio-001.png';
 import laconchitaImg from './assets/laconchitabeach.jpg';
 import balisafariImg from './assets/balisafaritour.jpg';
 import robreiderImg from './assets/robreidervoice.jpg';
@@ -171,12 +171,12 @@ export default function App() {
     },
     {
       id: 3,
-      title: 'DooDetector',
-      url: 'https://doodetector.com',
+      title: 'Personal YouTube Production Studio',
+      url: 'https://lulee-production.vercel.app/',
       meta: '2026 / APP',
-      desc: 'A playful camera-based web application created to solve a very real household problem: detecting when the backyard needs attention. Built for quick, practical use with a deliberately simple interface.',
-      stack: ['Next.js', 'Tailwind CSS'],
-      image: doodetectorImg
+      desc: 'I wanted a place to keep all my video prompts and assets organized for a YouTube channel I am creating- Lulee-Go! I started with a custom CMS, then I added features so I can edit, queue, and export prompts tailored for the AI video generator of my choice.',
+      stack: ['Next.js', 'Tailwind CSS', 'Zustand'],
+      image: luleestudioImg
     },
     {
       id: 4,
