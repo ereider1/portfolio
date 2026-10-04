@@ -247,9 +247,9 @@ export default function App() {
         </a>
 
         <ul className="nav-links">
-          <li><a href="#work">Selected Work</a></li>
-          <li><a href="#process">How I Build</a></li>
-          <li><a href="#tools">Technologies</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#tools">Tools</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -319,7 +319,7 @@ export default function App() {
 
               <div className="hero-bio">
                 <p>
-                  I started with a Bachelor of Fine Arts from Miami University and built my career across design, interactive media, front-end development, and technology. My experience includes web development at CrowdStrike, front-end and UI design at Yardi Systems, interactive design at Venables Bell & Partners, and freelance web development through ereider.
+                 I started with a Bachelor of Fine Arts from Miami University and built my career across design, interactive media, front-end development, and technology. My experience includes web development at CrowdStrike, front-end and UI design at Yardi Systems, interactive design at Venables Bell & Partners, and freelance web development through ereider. 
                 </p>
 
                 <p>
